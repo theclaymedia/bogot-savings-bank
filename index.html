@@ -3,166 +3,283 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bogota Savings Bank | Community Banking in New Jersey</title>
-<meta name="description" content="Checking, savings, and home loans from a local New Jersey bank. Earn 4.00% APY with High-Yield Checking.">
+<title>Bogota Savings Bank | Community Banking in New Jersey Since 1893</title>
+<meta name="description" content="One of the oldest banks in New Jersey. Checking, savings, and home loans from eight local branches. Earn 4.00% APY with High-Yield Checking.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/images/hero-poster.jpg">
 <style>
 :root{
   --teal:#0a6f76;
   --teal-deep:#074a50;
   --teal-bright:#17b3bd;
+  --teal-pale:#9fe9ee;
   --ink:#10242a;
   --muted:#4a5b60;
   --paper:#ffffff;
   --sand:#f4f1ea;
+  --sand-deep:#e8e2d5;
   --line:#d9dfe0;
   --focus:#ffbf1f;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --sans:"Public Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;font-size:1.0625rem}
+html{scroll-behavior:smooth;scroll-padding-top:110px}
+body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;font-size:1.0625rem;-webkit-font-smoothing:antialiased}
 img,svg,video{display:block;max-width:100%}
-a{color:var(--teal)}
+a{color:var(--teal);text-underline-offset:4px}
 :focus-visible{outline:3px solid var(--focus);outline-offset:3px;box-shadow:0 0 0 6px var(--ink)}
 .skip{position:absolute;left:1rem;top:-5rem;background:var(--ink);color:#fff;padding:.75rem 1.25rem;z-index:200;font-weight:700}
 .skip:focus{top:1rem}
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.1;margin:0;font-weight:700;letter-spacing:-.01em}
-.eyebrow{font-size:.9rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;margin:0 0 1.25rem}
-.wrap{width:min(1180px,100% - 3rem);margin-inline:auto}
+h1,h2,h3{font-family:var(--serif);line-height:1.08;margin:0;font-weight:700;letter-spacing:-.015em}
+.eyebrow{font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;margin:0 0 1.25rem}
+.eyebrow.teal{color:var(--teal)}
+.wrap{width:min(1200px,100% - 3rem);margin-inline:auto}
 
 /* Utility bar */
-.util{background:var(--ink);color:#fff;font-size:.9rem}
+.util{background:var(--ink);color:#fff;font-size:.875rem}
 .util .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding:.55rem 0}
-.util a{color:#fff;text-underline-offset:3px}
+.util a{color:#fff}
 .util p{margin:0}
+.util ul{list-style:none;margin:0;padding:0;display:flex;gap:1.75rem}
 
 /* Header */
-.site-header{background:#fff;position:sticky;top:0;z-index:50;border-bottom:1px solid var(--line)}
+.site-header{background:#fff;position:sticky;top:0;z-index:50;border-bottom:1px solid var(--line);transition:box-shadow .2s}
+.site-header.scrolled{box-shadow:0 6px 24px rgba(16,36,42,.08)}
 .site-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:2rem;min-height:84px}
-.brand img{height:54px;width:auto}
+.brand img{height:52px;width:auto}
+.nav{display:flex;align-items:center;gap:2.25rem}
 .nav ul{list-style:none;display:flex;gap:2rem;margin:0;padding:0;align-items:center}
-.nav a{color:var(--ink);text-decoration:none;font-weight:600;padding:.5rem 0;border-bottom:3px solid transparent}
-.nav a:hover{border-bottom-color:var(--teal)}
-.btn{display:inline-flex;align-items:center;gap:.75rem;background:var(--teal);color:#fff;text-decoration:none;font-weight:700;padding:1rem 1.75rem;border:2px solid var(--teal);font-size:1rem;cursor:pointer;font-family:inherit}
+.nav ul a{color:var(--ink);text-decoration:none;font-weight:600;padding:.5rem 0;border-bottom:3px solid transparent}
+.nav ul a:hover{border-bottom-color:var(--teal)}
+.nav-actions{display:flex;gap:.75rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;background:var(--teal);color:#fff;text-decoration:none;font-weight:700;padding:1rem 1.75rem;border:2px solid var(--teal);font-size:1rem;cursor:pointer;font-family:inherit;line-height:1.2;transition:background .15s,color .15s,border-color .15s}
 .btn:hover{background:var(--teal-deep);border-color:var(--teal-deep)}
+.btn.sm{padding:.7rem 1.2rem;font-size:.95rem}
+.btn.outline{background:#fff;color:var(--ink);border-color:var(--ink)}
+.btn.outline:hover{background:var(--ink);color:#fff}
 .btn.light{background:#fff;color:var(--ink);border-color:#fff}
 .btn.light:hover{background:var(--sand);border-color:var(--sand)}
 .btn.ghost{background:transparent;color:#fff;border-color:#fff}
 .btn.ghost:hover{background:#fff;color:var(--ink)}
+.btn svg{width:20px;height:20px}
 .menu-btn{display:none;background:none;border:2px solid var(--ink);padding:.6rem 1rem;font:inherit;font-weight:700;cursor:pointer;color:var(--ink)}
 
 /* Hero */
-.hero{position:relative;min-height:calc(100vh - 124px);min-height:calc(100svh - 124px);display:grid;place-items:center;text-align:center;color:#fff;overflow:hidden;isolation:isolate;background:var(--teal-deep)}
+.hero{position:relative;min-height:calc(100vh - 122px);min-height:calc(100svh - 122px);display:grid;place-items:center;text-align:center;color:#fff;overflow:hidden;isolation:isolate;background:var(--teal-deep) url("assets/images/hero-poster.jpg") center/cover}
 .hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(5,30,34,.72),rgba(5,30,34,.62));z-index:-1}
-.hero-inner{padding:4rem 1.5rem;max-width:56rem}
-.hero .eyebrow{color:#9fe9ee}
-.hero h1{font-size:clamp(2.6rem,7vw,5.5rem);margin-bottom:1.5rem}
-.hero p.lead{font-size:clamp(1.1rem,2vw,1.4rem);max-width:40rem;margin:0 auto 2.5rem}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(5,30,34,.55) 0%,rgba(5,30,34,.78) 100%);z-index:-1}
+.hero-inner{padding:5rem 1.5rem;max-width:60rem}
+.hero .eyebrow{color:var(--teal-pale)}
+.hero h1{font-size:clamp(2.75rem,7.2vw,6rem);margin-bottom:1.5rem}
+.hero h1 em{font-style:italic;color:var(--teal-pale)}
+.hero p.lead{font-size:clamp(1.1rem,2vw,1.35rem);max-width:38rem;margin:0 auto 2.5rem;color:#e6f2f3}
 .hero-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-.vid-toggle{position:absolute;right:1.25rem;bottom:1.25rem;background:rgba(5,30,34,.85);color:#fff;border:2px solid #fff;padding:.6rem 1rem;font:inherit;font-weight:700;cursor:pointer;display:flex;gap:.6rem;align-items:center}
-.vid-toggle svg{width:22px;height:22px}
+.hero-trust{margin:2.75rem auto 0;display:flex;gap:2.5rem;justify-content:center;flex-wrap:wrap;font-size:1rem;font-weight:600;color:#d4e6e8;list-style:none;padding:0}
+.hero-trust li{display:flex;align-items:center;gap:.6rem}
+.hero-trust svg{width:34px;height:34px;color:var(--teal-pale)}
+.vid-toggle{position:absolute;right:1.25rem;bottom:1.25rem;background:rgba(5,30,34,.85);color:#fff;border:2px solid #fff;padding:.55rem .95rem;font:inherit;font-size:.9rem;font-weight:700;cursor:pointer;display:flex;gap:.55rem;align-items:center}
+.vid-toggle svg{width:20px;height:20px}
 
 /* Rate strip */
 .rates{background:var(--teal);color:#fff}
 .rates .wrap{display:grid;grid-template-columns:repeat(3,1fr)}
-.rate{padding:2.25rem 1.75rem;border-left:1px solid rgba(255,255,255,.35)}
+.rate{padding:2.5rem 2rem;border-left:1px solid rgba(255,255,255,.3);display:flex;flex-direction:column}
 .rate:first-child{border-left:0;padding-left:0}
-.rate .num{font-family:Georgia,serif;font-size:clamp(2.4rem,4.5vw,3.6rem);font-weight:700;line-height:1}
-.rate .num small{font-size:1rem;font-family:"Helvetica Neue",Arial,sans-serif;font-weight:700;letter-spacing:.05em}
-.rate p{margin:.6rem 0 0}
-.rate a{color:#fff}
+.rate .label{font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:#d2f3f5;margin:0 0 .75rem}
+.rate .num{font-family:var(--serif);font-size:clamp(2.4rem,4.2vw,3.4rem);font-weight:700;line-height:1;white-space:nowrap}
+.rate .num small{font-size:.95rem;font-family:var(--sans);font-weight:700;letter-spacing:.04em;margin-left:.35rem}
+.rate p{margin:.85rem 0 0}
+.rate a{color:#fff;font-weight:600}
 
 /* Sections */
-section{padding:clamp(4rem,9vw,7.5rem) 0}
-.section-head{max-width:42rem;margin-bottom:3.5rem}
-.section-head h2{font-size:clamp(2rem,4.5vw,3.25rem)}
-.section-head p{color:var(--muted);margin:1.25rem 0 0}
-.eyebrow.teal{color:var(--teal)}
+section{padding:clamp(4.5rem,9vw,8rem) 0}
+.section-head{max-width:44rem;margin-bottom:3.5rem}
+.section-head h2{font-size:clamp(2.1rem,4.6vw,3.5rem)}
+.section-head p{color:var(--muted);margin:1.25rem 0 0;font-size:1.125rem}
+.head-row{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap;margin-bottom:3.5rem}
+.head-row .section-head{margin-bottom:0}
 
-.products{display:grid;grid-template-columns:repeat(3,1fr);gap:3rem}
-.product svg{width:72px;height:72px;color:var(--teal);margin-bottom:1.25rem}
-.product h3{font-size:1.7rem;margin-bottom:.75rem}
-.product p{color:var(--muted);margin:0 0 1.25rem}
-.arrow-link{font-weight:700;display:inline-flex;align-items:center;gap:.5rem;text-underline-offset:4px}
-.arrow-link svg{width:24px;height:24px}
+/* Tabs */
+.tabs{display:inline-flex;border:2px solid var(--ink)}
+.tabs button{font:inherit;font-weight:700;background:#fff;color:var(--ink);border:0;padding:.8rem 1.6rem;cursor:pointer}
+.tabs button + button{border-left:2px solid var(--ink)}
+.tabs button[aria-selected="true"]{background:var(--ink);color:#fff}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:2.5rem 3rem}
+.product{display:flex;flex-direction:column;border-top:2px solid var(--ink);padding-top:1.75rem}
+.product svg.ico{width:64px;height:64px;color:var(--teal);margin-bottom:1.25rem}
+.product h3{font-size:1.6rem;margin-bottom:.65rem}
+.product p{color:var(--muted);margin:0 0 1.25rem;flex:1}
+.arrow-link{font-weight:700;display:inline-flex;align-items:center;gap:.5rem}
+.arrow-link svg{width:22px;height:22px;transition:transform .15s}
+.arrow-link:hover svg{transform:translateX(4px)}
+[role="tabpanel"][hidden]{display:none}
 
-/* Feature split */
-.split{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(2rem,6vw,5rem);align-items:center}
-.split img{width:100%;height:auto}
+/* Split layouts */
+.split{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(2rem,6vw,5.5rem);align-items:center}
+.split img{width:100%;height:auto;object-fit:cover}
 .sand{background:var(--sand)}
-.split h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:1.25rem}
+.split h2{font-size:clamp(2.1rem,4.2vw,3.25rem);margin-bottom:1.25rem}
 .split p{color:var(--muted)}
-.checks{list-style:none;padding:0;margin:2rem 0}
-.checks li{display:flex;gap:1rem;align-items:center;font-weight:600;padding:.6rem 0;font-size:1.15rem}
+.checks{list-style:none;padding:0;margin:2rem 0 2.25rem}
+.checks li{display:flex;gap:1rem;align-items:center;font-weight:600;padding:.55rem 0;font-size:1.1rem}
 .checks svg{width:36px;height:36px;color:var(--teal);flex:none}
+.btn-row{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
 
-/* Why us */
+/* Calculator */
+.calc{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,5rem);align-items:center}
+.calc h2{font-size:clamp(2.1rem,4.2vw,3.25rem);margin-bottom:1.25rem}
+.calc-copy p{color:var(--muted)}
+.calc-panel{background:#fff;border:2px solid var(--ink);padding:clamp(1.75rem,4vw,3rem)}
+.calc-panel label{display:block;font-weight:700;margin-bottom:.4rem}
+.calc-balance{font-family:var(--serif);font-size:2.4rem;font-weight:700;margin:0 0 1rem;line-height:1}
+input[type=range]{width:100%;accent-color:var(--teal);height:2.25rem;cursor:pointer}
+.range-ends{display:flex;justify-content:space-between;color:var(--muted);font-size:.9rem;margin-top:.25rem}
+.calc-result{border-top:1px solid var(--line);margin-top:1.75rem;padding-top:1.75rem;display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.calc-result dt{font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+.calc-result dd{margin:.35rem 0 0;font-family:var(--serif);font-size:clamp(2rem,3.6vw,2.8rem);font-weight:700;color:var(--teal);line-height:1}
+.calc-note{font-size:.85rem;color:var(--muted);margin:1.5rem 0 0}
+
+/* Why */
 .dark{background:var(--ink);color:#fff}
-.dark .eyebrow{color:#9fe9ee}
+.dark .eyebrow{color:var(--teal-pale)}
 .dark .section-head p{color:#c9d6d8}
-.why{display:grid;grid-template-columns:repeat(4,1fr);gap:2.5rem}
-.why svg{width:64px;height:64px;color:var(--teal-bright);margin-bottom:1rem}
-.why h3{font-size:1.35rem;margin-bottom:.5rem}
+.why{display:grid;grid-template-columns:repeat(4,1fr);gap:3rem}
+.why svg{width:64px;height:64px;color:var(--teal-bright);margin-bottom:1.25rem}
+.why h3{font-size:1.4rem;margin-bottom:.5rem}
 .why p{margin:0;color:#c9d6d8}
 
-/* Community */
-.community .split{grid-template-columns:1fr 1.05fr}
-.community img{object-fit:cover;aspect-ratio:3/2}
-.stat-row{display:flex;gap:3rem;margin-top:2rem;flex-wrap:wrap}
-.stat strong{display:block;font-family:Georgia,serif;font-size:2.6rem;color:var(--teal);line-height:1}
-.stat span{color:var(--muted)}
+/* Heritage */
+.heritage .split{grid-template-columns:1fr 1.1fr;align-items:start}
+.heritage figure{margin:0}
+.heritage figcaption{font-size:.9rem;color:var(--muted);margin-top:.75rem}
+.heritage .big-year{font-family:var(--serif);font-size:clamp(5rem,13vw,10rem);font-weight:700;line-height:.85;color:var(--teal);margin:0 0 1.5rem;letter-spacing:-.04em}
+.timeline{list-style:none;margin:2.5rem 0 0;padding:0;border-left:2px solid var(--teal)}
+.timeline li{position:relative;padding:0 0 1.5rem 2rem}
+.timeline li::before{content:"";position:absolute;left:-7px;top:.55rem;width:12px;height:12px;background:var(--teal);border-radius:50%}
+.timeline li:last-child{padding-bottom:0}
+.timeline strong{font-family:var(--serif);font-size:1.35rem;display:block;line-height:1.2}
+.timeline span{color:var(--muted)}
 
-/* Apps + ATM */
+/* Locations */
+.locations-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:start}
+.locations-grid > figure{margin:0}
+.locations-grid figure img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover}
+.locations-grid figcaption{font-size:.9rem;color:var(--muted);margin-top:.75rem}
+.branch-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 2rem}
+.branch-list li{border-top:1px solid var(--line);padding:1.1rem 0}
+.branch-list strong{display:block;font-family:var(--serif);font-size:1.25rem}
+.branch-list span{color:var(--muted);font-size:.95rem;display:block}
+.branch-list .new strong::after{content:"New";margin-left:.6rem;font-family:var(--sans);font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);font-weight:700;vertical-align:middle}
+.loc-cta{margin-top:2rem;display:flex;gap:1.5rem;flex-wrap:wrap;align-items:center}
+
+/* Stats */
+.stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:2.5rem 0;margin:0}
+.stat-row div{margin:0}
+.stat-row dt{color:var(--muted);font-weight:600}
+.stat-row dd{margin:0 0 .35rem;font-family:var(--serif);font-size:clamp(2.4rem,4.5vw,3.5rem);color:var(--teal);line-height:1;font-weight:700}
+.stat-row div{display:flex;flex-direction:column-reverse;justify-content:flex-end}
+
+/* Apps */
 .apps{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem}
-.apps img{height:56px;width:auto}
+.apps img{height:54px;width:auto}
+
+/* Tips */
+.tips{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem}
+.tip{display:flex;flex-direction:column}
+.tip img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;margin-bottom:1.5rem}
+.tip .tag{font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--teal);margin:0 0 .6rem}
+.tip h3{font-size:1.55rem;margin-bottom:.65rem}
+.tip h3 a{color:var(--ink);text-decoration:none}
+.tip h3 a:hover{text-decoration:underline}
+.tip p{color:var(--muted);margin:0}
+.tip.feature{background:var(--teal-deep);color:#fff;padding:2.5rem}
+.tip.feature .tag{color:var(--teal-pale)}
+.tip.feature h3 a{color:#fff}
+.tip.feature p{color:#d8eef0}
+.tip.feature svg{width:72px;height:72px;color:var(--teal-pale);margin-bottom:auto;padding-bottom:2rem;box-sizing:content-box}
 
 /* CTA */
-.cta{background:var(--teal-deep);color:#fff;text-align:center}
-.cta h2{font-size:clamp(2rem,5vw,3.5rem);max-width:46rem;margin:0 auto 1.25rem}
-.cta p{max-width:36rem;margin:0 auto 2.25rem;color:#d8eef0}
+.cta{background:var(--teal-deep) url("assets/images/image-2.jpg") center/cover;color:#fff;text-align:center;position:relative;isolation:isolate}
+.cta::before{content:"";position:absolute;inset:0;background:rgba(5,40,44,.86);z-index:-1}
+.cta h2{font-size:clamp(2.2rem,5.2vw,4rem);max-width:48rem;margin:0 auto 1.25rem}
+.cta p{max-width:36rem;margin:0 auto 2.25rem;color:#d8eef0;font-size:1.15rem}
+.cta .btn-row{justify-content:center}
 
 /* Footer */
-footer{background:#0a171b;color:#c9d6d8;padding:4rem 0 2rem;font-size:.95rem}
-footer a{color:#fff;text-underline-offset:3px}
-.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2.5rem}
-.foot-grid h2{font-family:"Helvetica Neue",Arial,sans-serif;font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;color:#fff;margin-bottom:1rem}
-.foot-grid ul{list-style:none;margin:0;padding:0;display:grid;gap:.5rem}
+footer{background:#0a171b;color:#c9d6d8;padding:4.5rem 0 2rem;font-size:.95rem}
+footer a{color:#fff}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1fr;gap:2.5rem}
+.foot-grid h2{font-family:var(--sans);font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:#fff;margin-bottom:1rem}
+.foot-grid ul{list-style:none;margin:0;padding:0;display:grid;gap:.55rem}
+.foot-grid address{font-style:normal;margin-top:1.5rem;line-height:1.7}
 .logo-chip{background:#fff;padding:.75rem 1rem;display:inline-block}
-.logo-chip img{height:46px;width:auto}
-.badges{display:flex;gap:1.5rem;align-items:center;margin-top:1.5rem}
-.badges img{height:52px;width:auto;background:#fff;padding:.4rem .6rem}
-.legal{border-top:1px solid #243a40;margin-top:3rem;padding-top:1.5rem;font-size:.85rem;color:#a9bbbe}
+.logo-chip img{height:44px;width:auto}
+.badges{display:flex;gap:1rem;align-items:center;margin-top:1.5rem}
+.badges{gap:1.75rem}
+.badges img{height:44px;width:auto}
+.badges img.chip{background:#fff;padding:.35rem .5rem;height:52px}
+.social{display:flex;gap:1.25rem;margin-top:1.5rem}
+.social a{display:block}
+.social svg{width:28px;height:28px;color:#fff}
+.social a:hover svg{color:var(--teal-bright)}
+.legal{border-top:1px solid #243a40;margin-top:3.5rem;padding-top:1.5rem;font-size:.85rem;color:#a9bbbe}
 .legal p{margin:.5rem 0}
 
 /* Cookie consent */
-.cookie{position:fixed;left:1.25rem;bottom:1.25rem;width:min(380px,calc(100% - 2.5rem));background:#fff;color:var(--ink);border:2px solid var(--ink);box-shadow:0 18px 48px rgba(0,0,0,.35);padding:1.5rem;z-index:150}
+.cookie{position:fixed;left:1.25rem;bottom:1.25rem;width:min(390px,calc(100% - 2.5rem));background:#fff;color:var(--ink);border:2px solid var(--ink);box-shadow:0 18px 48px rgba(0,0,0,.35);padding:1.6rem;z-index:150}
 .cookie[hidden]{display:none}
 .cookie h2{font-size:1.4rem;margin-bottom:.6rem}
 .cookie p{margin:0 0 1.25rem;font-size:.95rem;color:var(--muted)}
-.cookie .row{display:flex;gap:.75rem;flex-wrap:wrap}
-.cookie .btn{padding:.7rem 1.2rem;font-size:.95rem}
-.cookie .btn.outline{background:#fff;color:var(--ink);border-color:var(--ink)}
-.cookie .btn.outline:hover{background:var(--sand)}
+.cookie .btn-row{gap:.75rem}
+.cookie fieldset{border:0;padding:0;margin:0 0 1.25rem}
+.cookie fieldset[hidden]{display:none}
+.cookie legend{font-weight:700;margin-bottom:.5rem}
+.cookie .opt{display:flex;gap:.75rem;align-items:flex-start;padding:.5rem 0;font-size:.95rem}
+.cookie .opt input{width:20px;height:20px;margin:.15rem 0 0;accent-color:var(--teal);flex:none}
+.cookie .link-btn{background:none;border:0;padding:0;font:inherit;font-weight:700;color:var(--teal);text-decoration:underline;text-underline-offset:4px;cursor:pointer}
 
-@media (max-width:980px){
-  .menu-btn{display:block}
-  .nav{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;border-bottom:1px solid var(--line);padding:1rem 1.5rem 1.5rem}
-  .nav.open{display:block}
-  .nav ul{flex-direction:column;align-items:flex-start;gap:.75rem}
-  .products,.why,.foot-grid{grid-template-columns:1fr 1fr}
-  .split,.community .split{grid-template-columns:1fr}
-  .rates .wrap{grid-template-columns:1fr}
-  .rate,.rate:first-child{border-left:0;padding:1.5rem 0;border-top:1px solid rgba(255,255,255,.35)}
-  .rate:first-child{border-top:0}
+/* Reveal */
+.js .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.js .reveal.in{opacity:1;transform:none}
+
+@media (max-width:1100px){
+  .products{grid-template-columns:1fr 1fr}
+  .why{grid-template-columns:1fr 1fr}
+  .foot-grid{grid-template-columns:1fr 1fr 1fr}
+  .foot-grid > div:first-child{grid-column:1/-1}
 }
-@media (max-width:620px){
-  .products,.why,.foot-grid{grid-template-columns:1fr}
-  .vid-toggle{position:static;margin:0 auto 1.25rem}
-  .hero{place-items:center}
+@media (max-width:1020px){
+  .menu-btn{display:block}
+  .nav{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;border-bottom:1px solid var(--line);padding:1rem 1.5rem 1.5rem;flex-direction:column;align-items:flex-start;gap:1.25rem}
+  .nav.open{display:flex}
+  .nav ul{flex-direction:column;align-items:flex-start;gap:.5rem}
+  .split,.heritage .split,.calc,.locations-grid{grid-template-columns:1fr}
+  .rates .wrap{grid-template-columns:1fr}
+  .rate,.rate:first-child{border-left:0;padding:1.75rem 0;border-top:1px solid rgba(255,255,255,.3)}
+  .rate:first-child{border-top:0}
+  .tips{grid-template-columns:1fr 1fr}
+  .stat-row{grid-template-columns:1fr 1fr}
+  .util ul{display:none}
+}
+@media (max-width:640px){
+  .products,.why,.foot-grid,.tips,.branch-list{grid-template-columns:1fr}
+  .vid-toggle{right:.75rem;bottom:.75rem}
+  .hero-trust{display:none}
+  .hero-inner{padding:3.5rem 1.25rem 5rem}
+  .hero-actions .btn{width:100%}
+  .util .wrap{font-size:.8rem}
+  .tabs{width:100%}
+  .tabs button{flex:1;padding:.8rem 1rem}
+  .calc-result{grid-template-columns:1fr}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
+  .js .reveal{opacity:1;transform:none;transition:none}
+  *{transition:none!important}
 }
 </style>
 </head>
@@ -171,181 +288,351 @@ footer a{color:#fff;text-underline-offset:3px}
 
 <div class="util">
   <div class="wrap">
-    <p>Member FDIC. Now open in Point Pleasant, 3100 Route 88.</p>
-    <p><a href="tel:+12018620660">(201) 862-0660</a></p>
+    <p>Member FDIC. Now open in Point Pleasant at 3100 Route 88.</p>
+    <ul>
+      <li><a href="#locations">Locations &amp; ATMs</a></li>
+      <li><a href="#tips">Tips &amp; Advice</a></li>
+      <li><a href="tel:+12018620660">(201) 862-0660</a></li>
+    </ul>
   </div>
 </div>
 
-<header class="site-header">
+<header class="site-header" id="site-header">
   <div class="wrap">
-    <a class="brand" href="#top"><img src="assets/images/logo.png" alt="Bogota Savings Bank, home"></a>
-    <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <a class="brand" href="#top"><img src="assets/images/logo.png" width="1259" height="282" alt="Bogota Savings Bank, home"></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
     <nav class="nav" id="nav" aria-label="Main">
       <ul>
-        <li><a href="#personal">Personal</a></li>
-        <li><a href="#business">Business</a></li>
+        <li><a href="#products">Personal</a></li>
+        <li><a href="#products" data-tab="tab-business">Business</a></li>
         <li><a href="#loans">Loans</a></li>
         <li><a href="#rates">Rates</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a class="btn" href="#open">Open an Account</a></li>
+        <li><a href="#about">About</a></li>
       </ul>
+      <div class="nav-actions">
+        <a class="btn outline sm" href="#">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg>
+          Log in
+        </a>
+        <a class="btn sm" href="#open">Open an account</a>
+      </div>
     </nav>
   </div>
 </header>
 
 <main id="main">
   <div id="top"></div>
+
   <section class="hero" aria-labelledby="hero-title" style="padding:0">
     <video id="hero-video" autoplay muted loop playsinline preload="metadata" poster="assets/images/hero-poster.jpg" aria-hidden="true" tabindex="-1">
       <source src="assets/hero.mp4" type="video/mp4">
     </video>
     <div class="hero-inner">
-      <p class="eyebrow">Bogota, New Jersey</p>
-      <h1 id="hero-title">Banking that grows with your neighborhood</h1>
-      <p class="lead">Local decisions, fair rates, and people who know your name. Earn 4.00% APY* with High-Yield Checking.</p>
+      <p class="eyebrow">Serving New Jersey since 1893</p>
+      <h1 id="hero-title">Your money works harder <em>close to home</em></h1>
+      <p class="lead">Earn 4.00% APY* with High-Yield Checking, borrow from lenders who live where you do, and bank with people who know your name.</p>
       <div class="hero-actions">
         <a class="btn light" href="#open">Open an account</a>
-        <a class="btn ghost" href="#rates">See today's rates</a>
+        <a class="btn ghost" href="#calculator">See what you could earn</a>
       </div>
+      <ul class="hero-trust">
+        <li><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3l10 4v8c0 7-4.5 11.5-10 14C10.5 26.5 6 22 6 15V7z"/><path d="M11.5 16l3.5 3.5 6-7"/></svg>Member FDIC</li>
+        <li><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 15L16 4l13 11"/><path d="M7 12v16h18V12"/><path d="M12 19h8M12 23h8"/></svg>Equal Housing Lender</li>
+        <li><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3a9 9 0 019 9c0 7-9 17-9 17S7 19 7 12a9 9 0 019-9z"/><circle cx="16" cy="12" r="3"/></svg>8 New Jersey branches</li>
+      </ul>
     </div>
     <button class="vid-toggle" id="vid-toggle" type="button" aria-label="Pause background video">
       <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
-      <span>Pause video</span>
+      <span>Pause</span>
     </button>
   </section>
 
-  <section class="rates" id="rates" aria-label="Featured rates" style="padding:0">
+  <section class="rates" id="rates" aria-labelledby="rates-title" style="padding:0">
+    <h2 id="rates-title" class="sr-only">Featured rates</h2>
     <div class="wrap">
       <div class="rate">
-        <div class="num">4.00%<small> APY*</small></div>
-        <p>High-Yield Checking. <a href="#personal">Learn more</a></p>
+        <p class="label">High-Yield Checking</p>
+        <div class="num">4.00%<small>APY*</small></div>
+        <p>When qualifying criteria are met. <a href="#calculator">Calculate your earnings</a></p>
       </div>
       <div class="rate">
-        <div class="num">Prime - 1.00%<small> APR**</small></div>
-        <p>Home Equity Line of Credit. <a href="#loans">Learn more</a></p>
+        <p class="label">Home Equity Line of Credit</p>
+        <div class="num">Prime -1.00%<small>APR**</small></div>
+        <p>Put your home's value to work. <a href="#loans">Explore HELOCs</a></p>
       </div>
       <div class="rate">
+        <p class="label">Surcharge-Free ATMs</p>
         <div class="num">55,000+</div>
-        <p>Surcharge-free ATMs worldwide with the Allpoint app.</p>
+        <p>Worldwide through the Allpoint network. <a href="#app">Find an ATM</a></p>
       </div>
     </div>
   </section>
 
-  <section id="personal" aria-labelledby="prod-title">
+  <section id="products" aria-labelledby="prod-title">
     <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow teal">What we offer</p>
-        <h2 id="prod-title">Everyday banking, made simple</h2>
-        <p>Whether you are saving for a first home or running a business on Main Street, we have an account built around your goals.</p>
+      <div class="head-row reveal">
+        <div class="section-head">
+          <p class="eyebrow teal">What we offer</p>
+          <h2 id="prod-title">Banking for every chapter</h2>
+          <p>From a child's first savings account to the mortgage on your storefront, generations of New Jersey families and businesses have grown with us.</p>
+        </div>
+        <div class="tabs" role="tablist" aria-label="Account type">
+          <button type="button" role="tab" id="tab-personal" aria-selected="true" aria-controls="panel-personal">Personal</button>
+          <button type="button" role="tab" id="tab-business" aria-selected="false" aria-controls="panel-business" tabindex="-1">Business</button>
+        </div>
       </div>
-      <div class="products">
+
+      <div class="products reveal" role="tabpanel" id="panel-personal" aria-labelledby="tab-personal" tabindex="0">
         <article class="product">
-          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="14" width="52" height="36" rx="4"/><path d="M6 25h52"/><path d="M14 40h14M14 45h8"/><circle cx="46" cy="40" r="5"/><circle cx="41" cy="40" r="5" opacity=".5"/></svg>
+          <svg class="ico" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="14" width="52" height="36" rx="4"/><path d="M6 25h52"/><path d="M14 40h14M14 45h8"/><circle cx="46" cy="40" r="5"/><circle cx="40" cy="40" r="5"/></svg>
           <h3>Checking</h3>
-          <p>Accounts designed to meet your banking needs, with free online and mobile banking.</p>
-          <a class="arrow-link" href="#personal">Explore checking<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
+          <p>High-Yield Checking at 4.00% APY*, plus free online banking, bill pay, and mobile deposit.</p>
+          <a class="arrow-link" href="#">Compare checking<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
         </article>
         <article class="product">
-          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 52h48"/><path d="M12 52V38M26 52V28M40 52V20M54 52V10"/><path d="M12 28l14-10 14-4 14-8"/><path d="M48 6h6v6"/></svg>
-          <h3>Savings</h3>
-          <p>Savings, money market, and CDs that help you reach your goals sooner.</p>
-          <a class="arrow-link" href="#personal">Explore savings<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
+          <svg class="ico" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 52h48"/><path d="M14 52V40M26 52V31M38 52V23M50 52V14"/><path d="M12 30l13-9 13-5 13-8"/><path d="M45 7h6v6"/></svg>
+          <h3>Savings &amp; CDs</h3>
+          <p>Savings, money market, and certificates of deposit that help you reach your goals sooner.</p>
+          <a class="arrow-link" href="#">Explore savings<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
         </article>
-        <article class="product" id="loans">
-          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 30L32 8l26 22"/><path d="M14 26v28h36V26"/><path d="M26 54V38h12v16"/><path d="M44 12v8"/></svg>
+        <article class="product">
+          <svg class="ico" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 30L32 8l26 22"/><path d="M14 26v28h36V26"/><path d="M26 54V38h12v16"/><path d="M44 12v8"/></svg>
           <h3>Home loans</h3>
-          <p>First home, bigger home, or refinancing, we have a mortgage that fits.</p>
+          <p>Purchase, refinance, or tap your equity with a HELOC or fixed-rate home equity loan.</p>
           <a class="arrow-link" href="#loans">Explore mortgages<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
         </article>
+        <article class="product">
+          <svg class="ico" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="32" cy="22" r="12"/><path d="M27 22h10M32 17v10"/><path d="M10 58c2-11 11-18 22-18s20 7 22 18"/></svg>
+          <h3>Retirement &amp; IRAs</h3>
+          <p>Traditional and Roth IRAs that let your savings compound for the years ahead.</p>
+          <a class="arrow-link" href="#">Plan for retirement<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
+        </article>
+      </div>
+
+      <div class="products" role="tabpanel" id="panel-business" aria-labelledby="tab-business" tabindex="0" hidden>
+        <article class="product">
+          <svg class="ico" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 24l5-14h42l5 14"/><path d="M6 24c0 4 3 7 6.5 7S19 28 19 24c0 4 3 7 6.5 7S32 28 32 24c0 4 3 7 6.5 7S45 28 45 24c0 4 3 7 6.5 7S58 28 58 24"/><path d="M10 31v23h44V31"/><path d="M26 54V40h12v14"/></svg>
+          <h3>Business checking</h3>
+          <p>Accounts sized for sole proprietors through growing companies, with online banking built in.</p>
+          <a class="arrow-link" href="#">Compare accounts<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
+        </article>
+        <article class="product">
+          <svg class="ico" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="26" cy="16" rx="16" ry="6"/><path d="M10 16v10c0 3.3 7.2 6 16 6s16-2.7 16-6V16"/><path d="M10 26v10c0 3.3 7.2 6 16 6"/><path d="M10 36v10c0 3.3 7.2 6 16 6"/><circle cx="44" cy="44" r="12"/><path d="M44 38v12M40.5 41.5c0-1.5 1.5-2.5 3.5-2.5s3.5 1 3.5 2.5-1.5 2-3.5 2.5-3.5 1-3.5 2.5 1.5 2.5 3.5 2.5 3.5-1 3.5-2.5"/></svg>
+          <h3>Business money market</h3>
+          <p>Earn competitive interest on operating reserves while keeping your cash accessible.</p>
+          <a class="arrow-link" href="#">See rates<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
+        </article>
+        <article class="product">
+          <svg class="ico" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 58V18l14-8v48"/><path d="M22 58V24h18v34"/><path d="M40 58V32h16v26"/><path d="M4 58h56"/><path d="M13 24h4M13 32h4M13 40h4M28 32h6M28 40h6M28 48h6M45 40h6M45 48h6"/></svg>
+          <h3>Commercial lending</h3>
+          <p>Commercial and multi-family mortgages plus real estate secured credit lines for small businesses.</p>
+          <a class="arrow-link" href="#">Talk to a lender<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
+        </article>
+        <article class="product">
+          <svg class="ico" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="14" y="6" width="36" height="52" rx="4"/><rect x="20" y="13" width="24" height="12" rx="1"/><path d="M21 34h4M30 34h4M39 34h4M21 42h4M30 42h4M39 42h4M21 50h4M30 50h13"/></svg>
+          <h3>Merchant services</h3>
+          <p>Accept cards in store, online, and on the go, with business credit cards to match.</p>
+          <a class="arrow-link" href="#">Get started<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
+        </article>
       </div>
     </div>
   </section>
 
-  <section class="sand" id="open" aria-labelledby="hy-title">
-    <div class="wrap split">
-      <img src="assets/images/image-1.jpg" width="2500" height="1750" loading="lazy" alt="A gray New Jersey home with a two-car garage and wooden doors">
-      <div>
-        <p class="eyebrow teal">Home financing</p>
-        <h2 id="hy-title">Let us help you get home</h2>
-        <p>Our local loan officers guide you from pre-approval to closing, and decisions are made right here in New Jersey.</p>
+  <section class="sand" id="calculator" aria-labelledby="calc-title">
+    <div class="wrap calc">
+      <div class="calc-copy reveal">
+        <p class="eyebrow teal">High-Yield Checking</p>
+        <h2 id="calc-title">See what your balance could earn</h2>
+        <p>Most checking accounts pay next to nothing. Ours pays 4.00% APY* when you meet a few simple monthly criteria, with interest compounded daily and credited every month.</p>
         <ul class="checks">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-7"/></svg>Residential and fixed-rate home equity loans</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-7"/></svg>Home equity lines at Prime - 1.00% APR**</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-7"/></svg>Commercial and multi-family mortgages</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-7"/></svg>Interest compounded daily</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-7"/></svg>Open online in minutes</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-7"/></svg>FDIC insured up to the legal limit</li>
         </ul>
-        <a class="btn" href="#loans">Talk to a loan officer</a>
+        <a class="btn" href="#open">Open High-Yield Checking</a>
+      </div>
+      <form class="calc-panel reveal" aria-labelledby="calc-form-title" onsubmit="return false">
+        <h3 id="calc-form-title" class="sr-only">Earnings calculator</h3>
+        <label for="balance">Your average balance</label>
+        <p class="calc-balance" id="balance-display" aria-hidden="true">$15,000</p>
+        <input type="range" id="balance" min="1000" max="100000" step="1000" value="15000" aria-valuetext="$15,000">
+        <div class="range-ends" aria-hidden="true"><span>$1,000</span><span>$100,000</span></div>
+        <dl class="calc-result" aria-live="polite">
+          <div><dt>Per year</dt><dd id="earn-year">$600</dd></div>
+          <div><dt>Per month</dt><dd id="earn-month">$50</dd></div>
+        </dl>
+        <p class="calc-note">Estimate for illustration only, based on 4.00% APY held for one year. Actual earnings depend on meeting qualifying criteria and on rate changes.</p>
+      </form>
+    </div>
+  </section>
+
+  <section id="loans" aria-labelledby="loan-title">
+    <div class="wrap split">
+      <img class="reveal" src="assets/images/image-1.jpg" width="2500" height="1750" loading="lazy" alt="A gray two-story home with a two-car garage and wooden doors">
+      <div class="reveal">
+        <p class="eyebrow teal">Home financing</p>
+        <h2 id="loan-title">Lenders who live where you do</h2>
+        <p>Whether you are buying your first home, moving up, downsizing, or refinancing, our loan officers guide you from pre-approval to closing, with decisions made right here in New Jersey.</p>
+        <ul class="checks">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-7"/></svg>Residential mortgages and refinancing</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-7"/></svg>Home equity lines at Prime -1.00% APR**</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-7"/></svg>Fixed-rate home equity loans</li>
+        </ul>
+        <div class="btn-row">
+          <a class="btn" href="#">Meet our loan officers</a>
+          <a class="arrow-link" href="#">Try our calculators<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="dark" id="about" aria-labelledby="why-title">
+  <section class="dark" aria-labelledby="why-title">
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head reveal">
         <p class="eyebrow">Why Bogota Savings Bank</p>
-        <h2 id="why-title">A bank that answers the phone</h2>
+        <h2 id="why-title">A bank that still answers the phone</h2>
         <p>We are your neighbors. That shapes how we lend, how we serve, and how we give back.</p>
       </div>
-      <div class="why">
+      <div class="why reveal">
         <div>
           <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M32 6l20 8v16c0 14-9 23-20 28C21 53 12 44 12 30V14z"/><path d="M23 32l7 7 12-14"/></svg>
           <h3>FDIC insured</h3>
           <p>Deposits are backed by the full faith and credit of the U.S. Government.</p>
         </div>
         <div>
-          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="18" y="4" width="28" height="56" rx="5"/><path d="M28 10h8"/><circle cx="32" cy="52" r="2"/><path d="M24 24h16M24 32h16M24 40h10"/></svg>
-          <h3>Bank on your phone</h3>
-          <p>Deposit checks, pay bills, and move money with online and mobile banking.</p>
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M42 10a20 20 0 11-28 6"/><path d="M14 6v10h10"/><path d="M32 20v13l8 5"/></svg>
+          <h3>Decisions made locally</h3>
+          <p>Talk to a person, not a call center. Your loan is reviewed by people in your community.</p>
         </div>
         <div>
-          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M32 58S10 40 10 25a14 14 0 0128-4 14 14 0 0126 4c0 15-22 33-22 33z" transform="translate(0 -4) scale(.94 .94) translate(2 3)"/><path d="M22 28h20M32 20v16"/></svg>
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M32 54S8 39 8 23a12 12 0 0124-5 12 12 0 0124 5c0 16-24 31-24 31z"/><path d="M32 27v12M26 33h12"/></svg>
           <h3>Giving back</h3>
-          <p>Our charitable foundation invests in the neighbors and nonprofits around us.</p>
+          <p>The Bogota Savings Bank Charitable Foundation invests in the nonprofits around us.</p>
         </div>
         <div>
-          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M32 6a18 18 0 0118 18c0 14-18 34-18 34S14 38 14 24A18 18 0 0132 6z"/><circle cx="32" cy="24" r="6"/></svg>
-          <h3>Nearby branches</h3>
-          <p>Visit us in Bogota and our new Point Pleasant office at 3100 Route 88.</p>
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="18" y="4" width="28" height="56" rx="5"/><path d="M28 10h8"/><circle cx="32" cy="52" r="2"/><path d="M25 26l5 5 9-10"/></svg>
+          <h3>Bank anywhere</h3>
+          <p>Deposit checks, pay bills, and move money anytime with online and mobile banking.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="community" aria-labelledby="comm-title">
-    <div class="wrap split">
-      <div>
-        <p class="eyebrow teal">Now open</p>
-        <h2 id="comm-title">We are excited to serve Point Pleasant</h2>
-        <p>Our newest office brings the same hometown service to the Jersey Shore. Stop in, meet the team, and see what community banking feels like.</p>
-        <div class="stat-row">
-          <div class="stat"><strong>2</strong><span>Local offices</span></div>
-          <div class="stat"><strong>55,000+</strong><span>Free ATMs</span></div>
+  <section class="heritage" id="about" aria-labelledby="heritage-title">
+    <div class="wrap">
+      <div class="split">
+        <div class="reveal">
+          <p class="big-year" aria-hidden="true">1893</p>
+          <p class="eyebrow teal">A legacy of trust</p>
+          <h2 id="heritage-title">One of the oldest banks in New Jersey</h2>
+          <p>In 1893, local businessman William Smith wanted the workers at his Bogota Paper Mills to have a place of their own to bank. With New York banker Victor Ludwig, he opened Bogota Building and Loan on March 31 of that year. More than 130 years later, we are still here for the same reason.</p>
         </div>
-        <p style="margin-top:2rem"><a class="arrow-link" href="#about">Find a location<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></p>
+        <div class="reveal">
+          <figure>
+            <img src="assets/images/image-2.jpg" width="2000" height="1234" loading="lazy" alt="Exterior of a Bogota Savings Bank branch with an arched entrance and the bank's sign">
+            <figcaption>A Bogota Savings Bank branch today.</figcaption>
+          </figure>
+          <ol class="timeline">
+            <li><strong>1893</strong><span>Bogota Building and Loan is founded in Bergen County.</span></li>
+            <li><strong>1941</strong><span>Renamed Bogota Savings and Loan Association.</span></li>
+            <li><strong>1996</strong><span>Becomes a state mutual and rebrands as Bogota Savings Bank.</span></li>
+            <li><strong>2021</strong><span>Merges with Gibraltar Bank, expanding across North Jersey.</span></li>
+            <li><strong>Today</strong><span>Eight branches, from Bergen County to the Jersey Shore.</span></li>
+          </ol>
+        </div>
       </div>
-      <img src="assets/images/image-3.jpg" width="2500" height="1666" loading="lazy" alt="Bogota Savings Bank team cutting a ribbon outside the new Point Pleasant office">
+      <dl class="stat-row reveal" style="margin-top:clamp(3.5rem,7vw,6rem)">
+        <div><dt>Years serving New Jersey</dt><dd>130+</dd></div>
+        <div><dt>Branch locations</dt><dd>8</dd></div>
+        <div><dt>Surcharge-free ATMs</dt><dd>55,000+</dd></div>
+        <div><dt>APY* on High-Yield Checking</dt><dd>4.00%</dd></div>
+      </dl>
     </div>
   </section>
 
-  <section class="sand" id="business" aria-labelledby="app-title">
+  <section class="sand" id="locations" aria-labelledby="loc-title">
+    <div class="wrap locations-grid">
+      <div class="reveal">
+        <p class="eyebrow teal">Locations</p>
+        <h2 id="loc-title" style="font-size:clamp(2.1rem,4.2vw,3.25rem);margin-bottom:1.25rem">Now open in Point Pleasant</h2>
+        <p style="color:var(--muted);margin:0 0 2rem">Our newest branch brings hometown service to the Jersey Shore. Most branches are open Saturday mornings, and many have a 24-hour drive-thru ATM.</p>
+        <ul class="branch-list">
+          <li><strong>Teaneck</strong><span>819 Teaneck Road. Headquarters</span></li>
+          <li><strong>Bogota</strong><span>60 East Main Street</span></li>
+          <li><strong>Hasbrouck Heights</strong><span>181 Boulevard</span></li>
+          <li><strong>Newark</strong><span>1039 South Orange Avenue</span></li>
+          <li><strong>Oak Ridge</strong><span>5527 Berkshire Valley Road</span></li>
+          <li><strong>Parsippany</strong><span>1719 Route 10 East</span></li>
+          <li class="new"><strong>Point Pleasant</strong><span>3100 Route 88</span></li>
+          <li><strong>Upper Saddle River</strong><span>558 East Crescent Avenue</span></li>
+        </ul>
+        <div class="loc-cta">
+          <a class="btn" href="#">Hours &amp; directions</a>
+          <a class="arrow-link" href="tel:+12018620660">Call (201) 862-0660<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+      <figure class="reveal">
+        <img src="assets/images/image-3.jpg" width="2500" height="1666" loading="lazy" alt="The Bogota Savings Bank team cutting a teal ribbon outside the new Point Pleasant branch">
+        <figcaption>Ribbon cutting at our Point Pleasant branch.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="app" aria-labelledby="app-title">
     <div class="wrap split">
-      <img src="assets/images/stock-3.jpg" width="2500" height="1667" loading="lazy" alt="A smiling customer using a phone and laptop at an outdoor cafe table">
-      <div>
+      <img class="reveal" src="assets/images/stock-3.jpg" width="2500" height="1667" loading="lazy" alt="A smiling customer checking a phone at an outdoor cafe table">
+      <div class="reveal">
         <p class="eyebrow teal">Banking on the go</p>
         <h2 id="app-title">Free ATMs, wherever you are</h2>
-        <p>Find a surcharge-free ATM at over 55,000 locations worldwide with the free Allpoint app, available for iOS and Android.</p>
+        <p>Every Bogota Savings Bank debit and ATM card works fee-free at over 55,000 Allpoint ATMs in pharmacies, grocery stores, and retailers worldwide. Find the nearest one with the free Allpoint app.</p>
         <div class="apps">
-          <a href="#"><img src="assets/images/app-store.png" width="954" height="256" alt="Download on the App Store"></a>
-          <a href="#"><img src="assets/images/google-play.png" width="954" height="256" alt="Get it on Google Play"></a>
+          <a href="#"><img src="assets/images/app-store.png" width="954" height="256" alt="Download the Allpoint app on the App Store"></a>
+          <a href="#"><img src="assets/images/google-play.png" width="954" height="256" alt="Get the Allpoint app on Google Play"></a>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="cta" aria-labelledby="cta-title">
+  <section class="sand" id="tips" aria-labelledby="tips-title">
     <div class="wrap">
-      <h2 id="cta-title">Ready to bank closer to home?</h2>
-      <p>Open an account online in minutes, or stop by and talk with someone local.</p>
-      <a class="btn light" href="#open">Open an account</a>
+      <div class="head-row reveal">
+        <div class="section-head">
+          <p class="eyebrow teal">Tips &amp; advice</p>
+          <h2 id="tips-title">Smarter money, one tip at a time</h2>
+        </div>
+        <a class="arrow-link" href="#">View all tips<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="tips reveal">
+        <article class="tip">
+          <img src="assets/images/stock-1.jpg" width="2500" height="1573" loading="lazy" alt="">
+          <p class="tag">Financial Tip Friday</p>
+          <h3><a href="#">Set up an emergency fund</a></h3>
+          <p>Saving at least three months of income gives you a cushion for job changes, medical bills, or surprise home repairs.</p>
+        </article>
+        <article class="tip">
+          <img src="assets/images/stock-2.jpg" width="2500" height="1668" loading="lazy" alt="">
+          <p class="tag">Financial Tip Friday</p>
+          <h3><a href="#">Help your future self</a></h3>
+          <p>When you get a raise, raise your 401(k) contribution too. You will barely notice, and compounding does the rest.</p>
+        </article>
+        <article class="tip feature">
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="12" y="28" width="40" height="30" rx="4"/><path d="M20 28V20a12 12 0 0124 0v8"/><circle cx="32" cy="41" r="4"/><path d="M32 45v5"/></svg>
+          <p class="tag">Security Tip Tuesday</p>
+          <h3><a href="#">Make every password count</a></h3>
+          <p>Use a different strong password for each account, mixing upper and lowercase letters, numbers, and symbols.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="open" aria-labelledby="cta-title">
+    <div class="wrap reveal">
+      <h2 id="cta-title">Bank with neighbors who have been here since 1893</h2>
+      <p>Open an account online in minutes, or stop by any of our eight branches and talk with someone local.</p>
+      <div class="btn-row">
+        <a class="btn light" href="#">Open an account online</a>
+        <a class="btn ghost" href="#locations">Find a branch</a>
+      </div>
     </div>
   </section>
 </main>
@@ -354,88 +641,193 @@ footer a{color:#fff;text-underline-offset:3px}
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <span class="logo-chip"><img src="assets/images/logo.png" alt="Bogota Savings Bank"></span>
-        <div class="badges">
-          <img src="assets/images/fdic.png" width="300" height="185" alt="FDIC insured">
-          <img src="assets/images/ehl.svg" alt="Equal Housing Lender" style="height:52px">
+        <span class="logo-chip"><img src="assets/images/logo.png" width="1259" height="282" alt="Bogota Savings Bank"></span>
+        <address>
+          Corporate Headquarters<br>
+          819 Teaneck Road, Teaneck, NJ 07666<br>
+          <a href="tel:+12018620660">(201) 862-0660</a><br>
+          <a href="mailto:info@BogotaSavingsBank.com">info@BogotaSavingsBank.com</a>
+        </address>
+        <div class="social">
+          <a href="#" aria-label="Bogota Savings Bank on Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.5h2.5l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5h1.5V4.4c-.3 0-1.2-.1-2.2-.1-2.2 0-3.8 1.4-3.8 3.9v2.3H8v3h2.5V21z"/></svg></a>
+          <a href="#" aria-label="Bogota Savings Bank on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" aria-label="Bogota Savings Bank on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.5 9h3v11h-3zM6 3.8a1.8 1.8 0 110 3.6 1.8 1.8 0 010-3.6zM10 9h2.9v1.5c.4-.8 1.4-1.7 3-1.7 3.1 0 3.6 2 3.6 4.7V20h-3v-5.8c0-1.4 0-3.1-1.9-3.1s-2.2 1.5-2.2 3V20H10z"/></svg></a>
+          <a href="#" aria-label="Bogota Savings Bank on YouTube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 7.2a2.5 2.5 0 00-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4a2.5 2.5 0 00-1.8 1.8C2 8.8 2 12 2 12s0 3.2.4 4.8a2.5 2.5 0 001.8 1.8c1.6.4 7.8.4 7.8.4s6.2 0 7.8-.4a2.5 2.5 0 001.8-1.8c.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8zM10 15V9l5.2 3z"/></svg></a>
         </div>
       </div>
       <div>
-        <h2>Contact</h2>
+        <h2>Personal</h2>
         <ul>
-          <li><a href="tel:+12018620660">(201) 862-0660</a></li>
-          <li><a href="mailto:info@BogotaSavingsBank.com">info@BogotaSavingsBank.com</a></li>
-          <li>NMLS# 630150</li>
+          <li><a href="#">Checking</a></li>
+          <li><a href="#">Savings</a></li>
+          <li><a href="#">Certificates of Deposit</a></li>
+          <li><a href="#">IRAs</a></li>
+          <li><a href="#">Credit Cards</a></li>
         </ul>
       </div>
       <div>
-        <h2>Quick links</h2>
+        <h2>Business &amp; Loans</h2>
+        <ul>
+          <li><a href="#">Business Checking</a></li>
+          <li><a href="#">Merchant Services</a></li>
+          <li><a href="#">Residential Mortgage</a></li>
+          <li><a href="#">Home Equity</a></li>
+          <li><a href="#">Commercial Mortgage</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>About</h2>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Charitable Foundation</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Investor Relations</a></li>
+          <li><a href="#locations">Locations &amp; ATMs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Resources</h2>
         <ul>
           <li><a href="#">FAQs</a></li>
           <li><a href="#">Calculators</a></li>
-          <li><a href="#">Privacy</a></li>
           <li><a href="#">Security</a></li>
+          <li><a href="#">Privacy</a></li>
           <li><a href="#">CRA Public File</a></li>
-        </ul>
-      </div>
-      <div>
-        <h2>Follow</h2>
-        <ul>
-          <li><a href="#">Facebook</a></li>
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">LinkedIn</a></li>
-          <li><a href="#">YouTube</a></li>
+          <li><button type="button" class="cookie-reopen" style="background:none;border:0;padding:0;font:inherit;color:#fff;text-decoration:underline;text-underline-offset:4px;cursor:pointer">Cookie preferences</button></li>
         </ul>
       </div>
     </div>
+    <div class="badges">
+      <img src="assets/images/fdic.png" width="300" height="185" alt="Member FDIC">
+      <img class="chip" src="assets/images/ehl.svg" alt="Equal Housing Lender">
+      <span>NMLS# 630150</span>
+    </div>
     <div class="legal">
-      <p>*APY = Annual Percentage Yield. Rates are subject to change at any time and are not guaranteed.</p>
+      <p>*APY = Annual Percentage Yield. High-Yield Checking offers a 3.92% interest rate and 4.00% APY when all qualifying criteria are met. Interest is compounded daily and credited monthly. Rates are subject to change at any time and are not guaranteed.</p>
       <p>**APR = Annual Percentage Rate. Rate based on creditworthiness and term of loan.</p>
       <p>We provide links to third party partners, independent from Bogota Savings Bank. These links are provided only as a convenience. We do not manage the content of those sites.</p>
-      <p>Design mockup for review. Not a live bank website.</p>
+      <p>&copy; 2026 Bogota Savings Bank. Design mockup for review. Not a live bank website.</p>
     </div>
   </div>
 </footer>
 
 <div class="cookie" id="cookie" role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-desc" hidden>
   <h2 id="cookie-title">Your privacy choices</h2>
-  <p id="cookie-desc">We use cookies to keep the site working and to understand how it is used. You can accept all cookies or keep only the essential ones.</p>
-  <div class="row">
-    <button class="btn" type="button" data-consent="all">Accept all</button>
-    <button class="btn outline" type="button" data-consent="essential">Essential only</button>
+  <p id="cookie-desc">We use cookies to keep the site secure and working, and with your permission, to understand how it is used.</p>
+  <fieldset id="cookie-prefs" hidden>
+    <legend>Choose cookies</legend>
+    <label class="opt"><input type="checkbox" checked disabled>Essential, always on</label>
+    <label class="opt"><input type="checkbox" id="ck-analytics">Analytics</label>
+    <label class="opt"><input type="checkbox" id="ck-marketing">Marketing</label>
+  </fieldset>
+  <div class="btn-row">
+    <button class="btn sm" type="button" data-consent="all">Accept all</button>
+    <button class="btn outline sm" type="button" data-consent="essential">Essential only</button>
+    <button class="link-btn" type="button" id="cookie-manage" aria-expanded="false" aria-controls="cookie-prefs">Manage</button>
   </div>
 </div>
 
 <script>
 (function(){
+  document.documentElement.classList.add('js');
+
+  /* Mobile menu */
   var menuBtn=document.querySelector('.menu-btn'),nav=document.getElementById('nav');
   menuBtn.addEventListener('click',function(){
     var open=nav.classList.toggle('open');
     menuBtn.setAttribute('aria-expanded',open);
   });
+  nav.addEventListener('click',function(e){
+    if(e.target.closest('a')){nav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');}
+  });
 
+  /* Header shadow */
+  var header=document.getElementById('site-header');
+  window.addEventListener('scroll',function(){header.classList.toggle('scrolled',window.scrollY>8);},{passive:true});
+
+  /* Hero video */
   var v=document.getElementById('hero-video'),t=document.getElementById('vid-toggle');
   var pauseIcon='<rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/>';
   var playIcon='<path d="M7 4.5v15l13-7.5z"/>';
   function setState(playing){
     t.querySelector('svg').innerHTML=playing?pauseIcon:playIcon;
-    t.querySelector('span').textContent=playing?'Pause video':'Play video';
+    t.querySelector('span').textContent=playing?'Pause':'Play';
     t.setAttribute('aria-label',playing?'Pause background video':'Play background video');
   }
-  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){v.pause();v.removeAttribute('autoplay');setState(false);}
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce){v.removeAttribute('autoplay');v.pause();setState(false);}
   t.addEventListener('click',function(){
     if(v.paused){v.play();setState(true);}else{v.pause();setState(false);}
   });
 
-  var c=document.getElementById('cookie'),saved=null;
+  /* Tabs */
+  var tabs=[].slice.call(document.querySelectorAll('[role="tab"]'));
+  function selectTab(tab,focus){
+    tabs.forEach(function(x){
+      var on=x===tab;
+      x.setAttribute('aria-selected',on);
+      x.tabIndex=on?0:-1;
+      document.getElementById(x.getAttribute('aria-controls')).hidden=!on;
+    });
+    if(focus)tab.focus();
+  }
+  tabs.forEach(function(tab,i){
+    tab.addEventListener('click',function(){selectTab(tab);});
+    tab.addEventListener('keydown',function(e){
+      var n=null;
+      if(e.key==='ArrowRight')n=tabs[(i+1)%tabs.length];
+      if(e.key==='ArrowLeft')n=tabs[(i-1+tabs.length)%tabs.length];
+      if(e.key==='Home')n=tabs[0];
+      if(e.key==='End')n=tabs[tabs.length-1];
+      if(n){e.preventDefault();selectTab(n,true);}
+    });
+  });
+  document.querySelectorAll('[data-tab]').forEach(function(a){
+    a.addEventListener('click',function(){selectTab(document.getElementById(a.dataset.tab));});
+  });
+  document.querySelector('.nav a[href="#products"]:not([data-tab])').addEventListener('click',function(){selectTab(tabs[0]);});
+
+  /* Calculator */
+  var range=document.getElementById('balance'),fmt=new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0});
+  function calc(){
+    var b=+range.value,y=b*0.04;
+    document.getElementById('balance-display').textContent=fmt.format(b);
+    range.setAttribute('aria-valuetext',fmt.format(b));
+    document.getElementById('earn-year').textContent=fmt.format(y);
+    document.getElementById('earn-month').textContent=fmt.format(y/12);
+  }
+  range.addEventListener('input',calc);calc();
+
+  /* Reveal on scroll */
+  var items=document.querySelectorAll('.reveal');
+  if(!reduce&&'IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
+    },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    items.forEach(function(el){io.observe(el);});
+  }else{items.forEach(function(el){el.classList.add('in');});}
+
+  /* Cookie consent */
+  var c=document.getElementById('cookie'),manage=document.getElementById('cookie-manage'),prefs=document.getElementById('cookie-prefs'),saved=null;
   try{saved=localStorage.getItem('bsb-consent');}catch(e){}
   if(!saved){c.hidden=false;}
-  c.addEventListener('click',function(e){
-    var b=e.target.closest('[data-consent]');if(!b)return;
-    try{localStorage.setItem('bsb-consent',b.dataset.consent);}catch(e){}
+  manage.addEventListener('click',function(){
+    var open=prefs.hidden;
+    prefs.hidden=!open;
+    manage.setAttribute('aria-expanded',open);
+    manage.textContent=open?'Save choices':'Manage';
+    if(!open){store('custom');}
+  });
+  function store(val){
+    if(val==='all'){document.getElementById('ck-analytics').checked=true;document.getElementById('ck-marketing').checked=true;}
+    try{localStorage.setItem('bsb-consent',val);}catch(e){}
     c.hidden=true;
+  }
+  c.addEventListener('click',function(e){
+    var b=e.target.closest('[data-consent]');if(b)store(b.dataset.consent);
   });
   c.addEventListener('keydown',function(e){if(e.key==='Escape'){c.hidden=true;}});
+  document.querySelector('.cookie-reopen').addEventListener('click',function(){c.hidden=false;c.querySelector('button').focus();});
 })();
 </script>
 </body>
