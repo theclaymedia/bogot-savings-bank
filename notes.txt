@@ -1,0 +1,14 @@
+Company Name: Bogota Savings Bank
+Current Site: https://www.bogotasavingsbank.com/
+
+- They want a fresh new look to the website, focusing on bringing in more clients.
+- create a website mockup in the index.html
+- add a hero section that shows the fills the screen regardless of screen ratio, with all elements centered and the eyebrow should not be in a pill container.
+- Extract any and all images and logos from their current site
+- use the video i added to the assets folder for the hero section background, optimize it and delete the original.
+- make it ada compliant.
+- add a cookies consent popup on the side.
+- avoid making the site look already extremely ai generated, avoid any more ai made indicators like pill containers for eyebrows and a scroll indicator on the hero section, and any kind of em dash in the mockup.
+- when adding icons into the mockup make sure to make the icons high quality svgs and dont put them in containers beside text just make it be the icon and the text and make the icon large.
+- check online for more info about them if you need to.
+- when done create a first publish commit that I will push.
